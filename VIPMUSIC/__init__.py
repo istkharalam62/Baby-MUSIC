@@ -25,7 +25,7 @@ heroku()
 # Load Sudo Users from DB
 sudo()
 
-app = ERABot()
+app = VIP()
 
 # Assistant Client
 userbot = Userbot()
