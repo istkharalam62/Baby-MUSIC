@@ -1,5 +1,4 @@
-
-from VIPMUSIC.core.bot import ERABot
+from VIPMUSIC.core.bot import VIP
 from VIPMUSICS.core.dir import dirr
 from VIPMUSIC.core.cookies import save_cookies
 from VIPMUSIC.core.git import git
