@@ -1,29 +1,43 @@
-from VIPMUSIC.core.bot import VIP
-from VIPMUSIC.core.dir import dirr
+
+from VIPMUSIC.core.bot import ERABot
+from VIPMUSICS.core.dir import dirr
+from VIPMUSIC.core.cookies import save_cookies
 from VIPMUSIC.core.git import git
 from VIPMUSIC.core.userbot import Userbot
-from VIPMUSIC.misc import dbb, heroku
+from VIPMUSIC.misc import dbb, heroku, sudo
 
-from SafoneAPI import SafoneAPI
 from .logging import LOGGER
 
+# Bot Client
+
+# Directories
 dirr()
+
+# Check Git Updates
 git()
+
+# Initialize Memory DB
 dbb()
+
+# Heroku APP
 heroku()
 
-app = VIP()
-api = SafoneAPI()
-userbot = Userbot()
+# Load Sudo Users from DB
+sudo()
 
+app = ERABot()
+
+# Assistant Client
+userbot = Userbot()
 
 from .platforms import *
 
-Apple = AppleAPI()
-Carbon = CarbonAPI()
-SoundCloud = SoundAPI()
-Spotify = SpotifyAPI()
-Resso = RessoAPI()
-Telegram = TeleAPI()
 YouTube = YouTubeAPI()
-APP = "@MISS_AARU_MUSIC_BOT"  # connect music api key "Dont change it"
+Carbon = CarbonAPI()
+Spotify = SpotifyAPI()
+Saavn = SaavnAPI()
+Apple = AppleAPI()
+Resso = RessoAPI()
+SoundCloud = SoundAPI()
+Telegram = TeleAPI()
+HELPABLE = {}
