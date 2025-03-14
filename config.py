@@ -19,8 +19,19 @@ MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 16000))
 
 # Chat id of a group for logging bot's activities
-LOGGER_ID = int(getenv("LOGGER_ID"))
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001443337704"))
+import os
+
+LOGGER_ID = getenv("LOGGER_ID")
+
+# Check if LOGGER_ID is None or empty, and provide a default value if so
+if LOGGER_ID is None:
+    LOGGER_ID = 0  # Set to your desired default value
+else:
+    LOGGER_ID = int(LOGGER_ID)
+
+# Or you can also use a safer approach with the second argument to `getenv`, which provides a default:
+LOGGER_ID = int(os.getenv("LOGGER_ID", 0))  # 0 is the default value
+
 
 # Get this value from  on Telegram by /id
 OWNER_ID = int(getenv("OWNER_ID"))
